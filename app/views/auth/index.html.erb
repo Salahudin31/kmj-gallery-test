@@ -1,0 +1,21 @@
+<%= provide(:title, "Login") %>
+<div class="container">
+	<div class="card mx-auto m-4 text-center" style="width: 35%;">
+		<div class="card-body">
+			<% if !flash[:notice].blank? %> 
+		      <p class="text-danger"><%= flash[:notice] %></p>
+			<% end %>
+			<h1 class="card-title">Login</h1>
+			<div class="form-groupr">
+			  <%= form_for(:session, url: login_path) do |f| %>
+			     <%= f.email_field :email, :placeholder => "Email", class: 'form-control', required: true %><br>
+			     <%= f.password_field :password, :placeholder => "Password", class: 'form-control', required: true %><br>
+			   <div>
+			    <%= f.submit "Login", class: "btn btn-primary" %>
+			    OR <a href="/signup">Sign Up</a>
+			   </div>
+			  <% end %>
+			</div>
+		</div>
+	</div> 
+</div>

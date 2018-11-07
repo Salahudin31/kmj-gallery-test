@@ -1,0 +1,36 @@
+<%= provide(:title, "Show supir") %>
+<div class="container">
+	<div class="card mx-auto m-4" style="width:400px">
+		<div class="card-body text-center">
+			<h4 class="card-title">
+			  Nick Name:
+			  <%= @supir.nick_name %>
+			</h4>
+
+			
+			<p class="card-text">
+			  Firts Name:
+			  <%= @supir.first_name %>
+			</p>
+			<p class="card-text">
+			  Last Name:
+			  <%= @supir.last_name %>
+			</p>	
+			<p class="card-text">
+			  Telepon:
+			  <%= @supir.telepon %>
+			</p>	
+			<p class="card-text">
+			  Alamat:
+			  <%= @supir.alamat %>
+			</p>	
+			<p class="card-text">
+			  Birth Date:
+			  <%= @supir.birth_date %>
+			</p>	
+
+
+			<%= link_to 'Back', supirs_path %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<nav class="navbar-expand-sm bg-dark navbar-dark mb-4">
+	<div class="container">
+		<ul class="navbar-nav justify-content-center">
+		  <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/users">Users</a></li>
+          <li class="nav-item"><a class="nav-link" href="/buses">Bus</a></li>    		          
+          <li class="nav-item"><a class="nav-link" href="/supirs">Supir</a></li>    		          
+          <li class="nav-item"><a class="nav-link" href="/contact_us">Contact</a></li>
+          <% if current_user %>
+		  	<li><%= link_to 'Logout',logout_path, :class => 'nav-link', method: :delete, data: { confirm: 'Are you sure to logout?' } %></li>
+		  <% else %>	          	
+          	<li class="nav-item"><a class="nav-link" href="/login">Login Member</a></li>
+          	<li class="nav-item"><a class="nav-link" href="/signup">Daftar Member</a></li>
+          <% end %>
+		</ul>
+	</div>
+</nav>

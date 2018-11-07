@@ -1,0 +1,43 @@
+<%= provide(:title, "Bus") %>
+<div class="container">   
+<% if !flash[:notice].blank? %>   
+   <div>   
+      <%= flash[:notice] %>   
+   </div>   
+<% end %>   
+  
+<br>   
+  
+<%= link_to "New bus", new_bus_path %>
+<br>   
+<br>   
+  
+<table class="table table-dark table-striped">
+   <thead>
+      <tr>   
+         <th>No Bus</th>   
+         <th>Gambar</th>   
+         <th>ID Jenis</th>   
+         <th>ID Bangku</th>   
+         <th>Fasilitas</th>   
+         <th>Action</th>   
+      </tr>   
+   </thead>   
+      
+   <tbody>   
+      <% @buses.each do |bus| %> 
+            
+         <tr>   
+            <td><%= bus.no_bus %></td>   
+            <td><%= image_tag url_for(bus.img_bus_url), :class => "img-fluid rounded" %></td>
+            <td><%= bus.id_jenis %></td>  
+            <td><%= bus.id_bangku %></td>  
+            <td><%= bus.fasilitas %></td>  
+    		   <td><%= link_to 'Show', bus_path(bus) %> | <%= link_to "Delete",  bus, method: :delete, confirm: "Are you sure you want to delete #{bus.no_bus}?" %></td>   
+         </tr>   
+            
+      <% end %>   
+   </tbody>   
+      
+</table>   
+</div>  

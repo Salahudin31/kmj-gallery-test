@@ -1,0 +1,2 @@
+module SupirHelper
+end

@@ -1,0 +1,45 @@
+<%= provide(:title, "supir") %>
+<div class="container">   
+<% if !flash[:notice].blank? %>   
+   <div>   
+      <%= flash[:notice] %>   
+   </div>   
+<% end %>   
+  
+<br>   
+  
+<%= link_to "New Supir", new_supir_path %>
+<br>   
+<br>   
+  
+<table class="table table-dark table-striped">
+   <thead>
+      <tr>   
+         <th>First Name</th>   
+         <th>Last Name</th>   
+         <th>Nick Name</th>   
+         <th>Telepon</th>   
+         <th>Alamat</th>   
+         <th>Birth Date</th>   
+         <th>Action</th>   
+      </tr>   
+   </thead>   
+      
+   <tbody>   
+      <% @supirs.each do |supir| %> 
+            
+         <tr>   
+            <td><%= supir.first_name %></td>
+            <td><%= supir.last_name %></td>
+            <td><%= supir.nick_name %></td>  
+            <td><%= supir.telepon %></td>  
+            <td><%= supir.alamat %></td>  
+            <td><%= supir.birth_date %></td>  
+    		<td><%= link_to 'Show', supir_path(supir) %> | <%= link_to "Delete",  supir, method: :delete, confirm: "Are you sure you want to delete #{supir.first_name}?" %></td>   
+         </tr>   
+            
+      <% end %>   
+   </tbody>   
+      
+</table>   
+</div>  

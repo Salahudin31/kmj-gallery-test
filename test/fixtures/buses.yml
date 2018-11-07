@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_bus: MyString
+  img_bus: MyString
+  id_jenis: 1
+  id_bangku: 1
+  fasilitas: MyText
+
+two:
+  no_bus: MyString
+  img_bus: MyString
+  id_jenis: 1
+  id_bangku: 1
+  fasilitas: MyText

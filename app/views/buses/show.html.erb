@@ -1,0 +1,31 @@
+<%= provide(:title, "Show Bus") %>
+<div class="container">
+	<div class="card mx-auto m-4" style="width:400px">
+		<div class="card-body text-center">
+			<h4 class="card-title">
+			  Nomer Bus:
+			  <%= @bus.no_bus %>
+			</h4>
+
+			<p>
+			  <img src="<%= @bus.img_bus %>" class="card-img" alt="">
+			</p>
+			
+			<p class="card-text">
+			  Jenis:
+			  <%= @bus.id_jenis %>
+			</p>	
+			<p class="card-text">
+			  Bangku:
+			  <%= @bus.id_bangku %>
+			</p>	
+			<p class="card-text">
+			  Fasilitas:
+			  <%= @bus.fasilitas %>
+			</p>	
+
+
+			<%= link_to 'Back', buses_path %>
+		</div>
+	</div>
+</div>

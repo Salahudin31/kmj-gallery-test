@@ -1,0 +1,20 @@
+<%= provide(:title, "Edit") %>
+<h1>Edit User</h1>
+<br>
+<div class="form-group">
+ <%= form_for(@user, url: {action: "_edit"}, method: "post") do |f| %>
+  <label>First Name</label>
+    <%= f.text_field :first_name, :value => @user.first_name, class: 'form-input', required: true %><br>
+    <label>Last Name</label>
+    <%= f.text_field :last_name, :value => @user.last_name, class: 'form-input', required: true %><br>
+    <label>Nick Name</label>
+    <%= f.text_field :nick_name, :value => @user.nick_name, class: 'form-input', required: true %><br>
+    <label>Address</label>
+    <%= f.text_area :address, :value => @user.address, class: 'form-input-textarea', required: true %><br>
+    <label>Phone</label>
+    <%= f.number_field :phone, :value => @user.phone, class: 'form-input', required: true %><br>
+    <%= f.email_field :email, :value => @user.email, class: 'form-input', required: true %><br>
+    <%= f.password_field :password, :value => @user.password, class: 'form-input', required: true %><br>
+  <%= f.submit "Save", class: "btn-submit" %>  <input type="button" onclick="location.href='/users';" value="Cancel" class="btn-submit" />
+ <% end %>
+</div>
